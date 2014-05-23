@@ -1,0 +1,57 @@
+%table{width: '100%'}
+  %thead
+    %tr
+      %th.tochead{colspan: 2}
+        Ebiri Mu Kitabo
+  %tbody.toctable
+    %tr
+      %td.tocmarker
+        %a.rom.tocist{href: '#preface'}
+      %td.tocelem
+        %a{href: '#preface'}
+          Ebisooka
+    %tr
+      %td.tocmarker
+        %a.rom.tocist{href: '#creeds'}
+      %td.tocelem
+        %a{href: '#creeds'}
+          Enzikiriza
+    %tr
+      %td.head{colspan: '2'}
+        Ebitabo mu Bible
+.splat
+  %table{width: '100%'}
+    %tbody.toctable
+      - @robj.first.books.each_with_index do |book, bix|
+        %tr
+          - hrf = %[#bk#{bix + 1}]
+          %td.tocmarker
+            %a.tocist{href: hrf}
+          %td.tocelem
+            %a{href: hrf}
+              = book.name
+%table{width: '100%'}
+  %tbody.toctable
+    %tr
+      %td.head{colspan: '2'}
+        Ebisembayo
+    %tr
+      %td.tocmarker
+        %a.tocist.rom{href: '#devotional'}
+      %td
+        %a.tocelem{href: '#devotional'}  Emisomo Gya Buli Lunaku
+    %tr
+      %td.tocmarker
+        %a.tocist.rom{href: '#confessionoffaith'}
+      %td
+        %a.tocelem{href: '#confessionoffaith'} Enzikiriza y’Bapoto
+    %tr
+      %td.tocmarker
+        %a.tocist.rom{href: '#catechism'}
+      %td
+        %a.tocelem{href: '#catechism'} Katekiisimu
+    %tr
+      %td.tocmarker
+        %a.tocist.rom{href: '#canons'}
+      %td
+        %a.tocelem{href: '#canons'} Ebyajulirwa e Dordt

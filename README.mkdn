@@ -1,0 +1,5 @@
+Zefania XML to PDF
+==================
+This system uses Price XML to turn a Zefania XML Bible into a reasonably-good PDF. The config file for a build can specify embedded images, and a lot of other data that makes the resultant Bible pretty neat.
+
+There is a sample as `The Free Christian Scriptures`. It incorporates the Three Forms of Unity, among other things. It is the work for which the system is originally built.

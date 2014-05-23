@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<%
+$grlarge = 61.803397052778415;
+$grsmall = 100.0 - 61.803397052778415;
+
+$centwidth  = 2.0
+$bigwidth   = $grlarge - ($centwidth / 2.0)
+$smallwidth = 100.0 - ($bigwidth + $centwidth)
+$books1     = @robj.first.books
+$books2     = @robj.last.books
+%>
+<html>
+  <head>
+    <title><%= @robj.name %></title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <div class="cov"><%= @robj.name %><div class="cross">†</div></div>
+    <div id="main">
+      <h1><%= @robj.name %><div class="lic"><%=  @robj.licence  %></div><div class="ruled"><%= ruled(33) %></div><div class="decl"><%= @robj.signature  %></div></h1>
+      <div class="toc"><%=  toc() %></div>
+      <div class="preface"><%= preface() %></div>
+      <div class="content">
+      <%  $books1.each_with_index do |bk, ix|
+        altbook = $books2[ix]
+        begin
+      %>
+          <div class="book">
+            <% unless bk.head.nil? then %><div class="bkhead"><%= bk.head %></div><% end %>
+            <table id="bk<%= ix + 1 %>" class="bnoms">
+              <tbody>
+                <tr>
+                  <td class="fstnom"><%= bk.name %></td>
+                  <td class="sndnom"><%= altbook.name %></td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="chapters">
+            <%  bk.chapters.each_with_index do |ch, cix|
+              altchap = altbook.chapters[cix]
+                %>
+                <h3><%= cix + 1 %></h3>
+                <%= @robj.chapter_illustration(%[<div class="illu"><img alt=%s src=%s /></div>], ix, bk, cix, ch) %>
+                <%  if  ch[:title].to_s != '' then %>
+                  <div class="pstitle"><%= ch[:title].to_s.gsub(/\[([^\]]+)\]/, '<i>\1</i>').gsub("'", '’')  %></div>
+                <% end  %>
+                <div class="verses">
+                  <%
+                    initand = true
+                    ch[:verses].each_with_index do |vr, vix|
+                      begin
+                        altver  = altchap[:verses][vix]
+                        vt      = (vr || {})[:text].to_s
+                        altvt   = (altver || {})[:text].to_s
+                        %><div class="verse">
+                          <table>
+                            <tbody>
+                              <tr><td class="monap"><%= vt  %></td><td class="vmark"></td><td class="diap"><%= altvt.treat_verse %></td></tr>
+                            </tbody>
+                          </table>
+                        </div><%
+                      rescue Exception => e
+                      end
+                    end
+                  %>
+                </div>
+              <%  end %>
+            </div>
+          </div>
+          <%
+          rescue Exception => e
+          end
+        end %>
+      </div>
+      <div class="index"><%= index() %></div>
+      <div class="preface"><%= theology() %></div>
+      <h2 class="brk">Solemnities</h2>
+      <div class="ruled"><%= ruled(33) %></div>
+      <div class="publabel">
+        <div class="prnom">Tertius Publishing</div>
+        <div class="motto">“I, Tertius, who wrote down this letter, greet you in the Lord”</div>
+        <div class="url"><a href="http://tertius.1st.ug/">tertius.1st.ug</a></div>
+        <div class="dt"><%= Time.now.strftime('%d %B, %Y') %></div>
+      </div>
+    </div>
+  </body>
+</html>

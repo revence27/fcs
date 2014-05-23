@@ -1,0 +1,569 @@
+@charset "UTF-8";
+body {
+  font-family: "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+  font-size: 13pt;
+  font-variant-settings: "diag", "dlig";
+  hyphenate-after: 3; }
+  body .cov {
+    font-variant: normal;
+    font-size: 40pt;
+    font-family: "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+    page: coverpage;
+    vertical-align: bottom;
+    text-align: center;
+    color: #996300;
+    margin-top: 3em; }
+    body .cov .cross {
+      font-size: 500%;
+      font-weight: 900;
+      color: #996300;
+      font-family: "Helvetica", "Alex Brush"; }
+  body h1 .lic {
+    font-family: "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+    text-align: right;
+    margin-right: 25%;
+    font-variant: normal;
+    font-size: 10pt;
+    color: black; }
+  body h1 .decl {
+    font-family: "Alegreya SC", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+    font-variant: small-caps;
+    color: maroon;
+    border-bottom: solid 1px maroon;
+    margin-top: 2em;
+    font-size: 50%;
+    font-weight: normal;
+    padding-left: 5em;
+    padding-right: 5em; }
+  body .brk {
+    page-break-before: always; }
+  body .publabel {
+    font-size: 20pt;
+    text-align: right;
+    margin-top: 0.5em; }
+    body .publabel .prnom {
+      font-family: "TrajanusBricks", "Trajan Pro Regular"; }
+      body .publabel .prnom:first-letter {
+        color: maroon; }
+    body .publabel .motto {
+      font-family: "Caudex";
+      font-size: 50%; }
+    body .publabel .url {
+      font-family: "Liberation Mono";
+      font-size: 50%; }
+    body .publabel .dt {
+      font-family: "Liberation Mono";
+      font-weight: bold;
+      font-size: 30%; }
+  body .index {
+    font-family: "Alegreya SC", "Quattrocento Sans";
+    page-break-before: always;
+    counter-reset: page 1; }
+    body .index h1, body .index h2, body .index h3, body .index h4, body .index h5, body .index h6 {
+      font-family: "Alegreya", "Quattrocento Roman"; }
+    body .index .mainquote {
+      width: 75%;
+      margin-left: 12.5%;
+      font-family: "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+      text-align: center;
+      font-size: 75%;
+      font-style: italic; }
+      body .index .mainquote p {
+        margin: 0px;
+        margin-bottom: 0.5em; }
+      body .index .mainquote .where {
+        font-family: "Alegreya Sans", "Roboto Slab", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+        text-align: right;
+        color: maroon; }
+    body .index .entries {
+      font-size: 50%;
+      column-count: 2; }
+      body .index .entries table {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+        margin-top: 0.75em; }
+        body .index .entries table td {
+          vertical-align: top;
+          text-align: center;
+          border: none; }
+        body .index .entries table .date {
+          margin-top: 1em;
+          width: 20%; }
+          body .index .entries table .date td {
+            font-weight: bold;
+            color: maroon;
+            text-align: right;
+            font-size: 120%; }
+        body .index .entries table .labels {
+          font-family: "Alegreya SC", "Quattrocento Sans";
+          font-weight: bold;
+          border-bottom: solid 1px maroon;
+          font-size: 110%; }
+          body .index .entries table .labels .morn:before {
+            content: "☼";
+            color: maroon;
+            padding-right: 0.75em; }
+          body .index .entries table .labels .even:after {
+            content: "✦";
+            color: maroon;
+            padding-left: 0.75em; }
+        body .index .entries table .passages .morning, body .index .entries table .passages .evening {
+          width: 40%;
+          padding: 0px;
+          padding-bottom: 0.5em; }
+          body .index .entries table .passages .morning ul, body .index .entries table .passages .evening ul {
+            counter-reset: pcount;
+            list-style: none;
+            margin: 0px; }
+            body .index .entries table .passages .morning ul li, body .index .entries table .passages .evening ul li {
+              counter-increment: pcount;
+              margin: 0px;
+              display: inline; }
+              body .index .entries table .passages .morning ul li:before, body .index .entries table .passages .evening ul li:before {
+                content: counter(pcount,lower-alpha) ". ";
+                color: maroon;
+                font-style: italic;
+                font-weight: bold;
+                font-family: "Alegreya Sans", "Roboto Slab", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush"; }
+  body .ruled {
+    border: solid 1px #996300;
+    margin-top: 1em; }
+    body .ruled .line {
+      height: 6mm;
+      border: none;
+      width: 100%;
+      border-bottom: dashed 1px #ffdb99; }
+  body .toc {
+    page-break-before: always;
+    page: tocpage; }
+    body .toc .tochead {
+      font-size: 200%;
+      color: maroon;
+      border-bottom: solid #996300 1px; }
+    body .toc .splat {
+      column-count: 2; }
+    body .toc .toctable {
+      counter-reset: te;
+      width: 100%; }
+      body .toc .toctable a {
+        text-decoration: none;
+        color: inherit; }
+        body .toc .toctable a:hover {
+          color: maroon; }
+      body .toc .toctable .head {
+        color: #996300;
+        font-size: 120%;
+        font-weight: bold;
+        margin-top: 0.25em;
+        margin-bottom: 0.125em; }
+      body .toc .toctable .tocist {
+        font-family: "Alegreya SC", "Quattrocento Sans";
+        text-align: left;
+        font-weight: bold;
+        font-style: italic;
+        padding-right: 1em;
+        content: target-counter(attr(href), page); }
+        body .toc .toctable .tocist.rom {
+          content: target-counter(attr(href), page, lower-roman); }
+      body .toc .toctable .tocmarker {
+        width: 4em;
+        font-family: "Alegreya SC", "Quattrocento Sans";
+        text-align: center; }
+      body .toc .toctable .tocelem {
+        font-size: 80%;
+        counter-increment: te;
+        display: block; }
+  body .preface {
+    font-family: "Alegreya", "Quattrocento Roman";
+    page-break-before: always;
+    page-break-after: always; }
+    body .preface i {
+      color: inherit;
+      font: inherit;
+      font-style: italic; }
+    body .preface sup {
+      font-size: 50%; }
+    body .preface h1, body .preface h2, body .preface h3, body .preface h4, body .preface h5, body .preface h6 {
+      font-family: "Alegreya SC", "Quattrocento Sans";
+      margin: 0px;
+      margin-top: 1.2em; }
+    body .preface h2 {
+      string-set: bighead content(); }
+    body .preface h3.labeled {
+      string-set: runhead content(); }
+    body .preface h3.cleared {
+      page-break-before: always; }
+    body .preface .mainquote {
+      width: 75%;
+      margin-left: 12.5%;
+      font-family: "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+      text-align: center;
+      font-size: 75%;
+      font-style: italic; }
+      body .preface .mainquote p {
+        margin: 0px;
+        margin-bottom: 0.5em; }
+      body .preface .mainquote .where {
+        font-family: "Alegreya Sans", "Roboto Slab", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+        text-align: right;
+        color: maroon; }
+    body .preface .conc {
+      column-count: 3; }
+      body .preface .conc p {
+        text-align: justify;
+        hyphens: auto; }
+    body .preface .livre {
+      font-size: 60%; }
+      body .preface .livre .bk .info {
+        column-count: 2;
+        counter-reset: 1; }
+        body .preface .livre .bk .info h1, body .preface .livre .bk .info h2, body .preface .livre .bk .info h3, body .preface .livre .bk .info h4, body .preface .livre .bk .info h5, body .preface .livre .bk .info h6 {
+          width: 50%;
+          float: left;
+          margin: 0px;
+          padding: 0px;
+          padding-right: 0.25em; }
+        body .preface .livre .bk .info .counted {
+          counter-increment: artctr; }
+          body .preface .livre .bk .info .counted:before {
+            content: counter(artctr);
+            font-family: "Alegreya Sans", "Roboto Slab", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+            padding-right: 0.25em;
+            padding-left: 0.25em;
+            margin-right: 0.25em;
+            float: left;
+            color: white;
+            background: maroon; }
+        body .preface .livre .bk .info .rej:before {
+          content: "—";
+          font-family: "Alegreya Sans", "Roboto Slab", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+          padding-right: 0.25em;
+          padding-left: 0.25em;
+          margin-right: 0.25em;
+          float: left;
+          color: maroon; }
+        body .preface .livre .bk .info .cart {
+          width: 100%;
+          float: none; }
+        body .preface .livre .bk .info .art {
+          counter-increment: artctr;
+          margin-bottom: 1em; }
+        body .preface .livre .bk .info p {
+          hyphens: auto;
+          text-align: justify;
+          margin: 0px;
+          margin-bottom: 0.3333em; }
+          body .preface .livre .bk .info p.listed {
+            text-align: center; }
+        body .preface .livre .bk .info .verses {
+          list-style: none;
+          color: #996300;
+          text-align: center;
+          font-family: "Alegreya Sans", "Roboto Slab", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+          font-size: 75%;
+          margin: 0px;
+          margin-bottom: 1em;
+          counter-reset: refc; }
+          body .preface .livre .bk .info .verses li {
+            display: inline;
+            margin: 0px;
+            text-indent: 0px;
+            font-weight: bold; }
+            body .preface .livre .bk .info .verses li:before {
+              content: counter(refc,lower-alpha) ".";
+              counter-increment: refc;
+              color: maroon;
+              margin-left: 0.25em;
+              margin-right: 0.125em;
+              padding-right: 0em;
+              padding-left: 0.25em;
+              font-weight: normal;
+              font-style: italic; }
+            body .preface .livre .bk .info .verses li:first:before {
+              content: none; }
+    body .preface .crtd {
+      width: 50%;
+      vertical-align: top; }
+    body .preface .articles {
+      margin-left: 10%;
+      width: 80%; }
+      body .preface .articles .article {
+        margin-top: 1em; }
+        body .preface .articles .article h1, body .preface .articles .article h2, body .preface .articles .article h3, body .preface .articles .article h4, body .preface .articles .article h5, body .preface .articles .article h6 {
+          margin: 0px;
+          width: 25%;
+          float: left;
+          text-align: right;
+          padding-right: 0.25em; }
+        body .preface .articles .article .copy {
+          font-size: 75%; }
+          body .preface .articles .article .copy p {
+            text-indent: 1em;
+            margin: 0px;
+            margin-top: 0.25em;
+            page-break-inside: avoid; }
+          body .preface .articles .article .copy .edt {
+            font-size: 95%;
+            font-family: "Alegreya SC", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+            text-align: right;
+            width: 20%; }
+            body .preface .articles .article .copy .edt sup {
+              font-family: "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush"; }
+        body .preface .articles .article .lectionary {
+          font-family: "Alegreya SC", "Quattrocento Sans";
+          font-size: 50%;
+          border: solid 1px maroon;
+          column-count: 6;
+          padding: 0.5em; }
+          body .preface .articles .article .lectionary .entry {
+            margin: 0px;
+            margin-top: 0.5em;
+            page-break-inside: avoid;
+            text-align: center; }
+            body .preface .articles .article .lectionary .entry .date {
+              font-weight: bold;
+              color: maroon; }
+            body .preface .articles .article .lectionary .entry .readings .ot {
+              display: none; }
+  body h1, body h2, body h3, body h4, body h5, body h6 {
+    width: 100%;
+    text-align: center;
+    font-family: "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+    color: maroon; }
+  body #main {
+    counter-reset: page;
+    background: white; }
+    body #main h1 {
+      page: frontpage; }
+    body #main .content {
+      counter-reset: page 1;
+      page: biblepage; }
+    body #main .book h2 {
+      string-set: moname content();
+      page-break-before: always; }
+    body #main .book .bkhead {
+      page: frontpage;
+      margin-bottom: 1em;
+      font-family: "Alegreya SC", "Quattrocento Sans";
+      page-break-before: always;
+      text-align: center;
+      font-size: 250%;
+      color: #996300;
+      border: solid 1px maroon;
+      padding: 0.25em; }
+      body #main .book .bkhead .teensy {
+        display: block;
+        color: maroon;
+        font-size: 50%; }
+    body #main .book .chapters {
+      counter-reset: chapter; }
+      body #main .book .chapters h3 {
+        string-set: curchap content();
+        content: " —" content() "— ";
+        font-family: "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+        margin: 0px;
+        margin-top: 1.2em; }
+      body #main .book .chapters .illu {
+        text-align: center;
+        page-break-inside: avoid;
+        font-family: "Alegreya SC", "Quattrocento Sans";
+        text-align: center;
+        display: block;
+        line-height: 0.5em;
+        margin: 0px;
+        margin-top: 0.25em;
+        margin-bottom: 0.5em;
+        margin-left: 12.5%;
+        width: 75%;
+        padding: 0.25%;
+        border: 1px solid #996300;
+        background: black;
+        color: white; }
+        body #main .book .chapters .illu img {
+          display: block;
+          width: 99%;
+          margin: 0.25%;
+          border: maroon 1px solid;
+          string-set: imgtit attr(alt); }
+        body #main .book .chapters .illu:after {
+          content: string(imgtit);
+          width: 50%;
+          font-size: 60%; }
+      body #main .book .chapters .pstitle {
+        font-family: "Alegreya SC", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+        color: maroon;
+        text-align: center;
+        font-size: 75%;
+        page-break-after: avoid;
+        page-break-before: avoid; }
+      body #main .book .chapters .verses {
+        counter-reset: theverse;
+        counter-increment: chapter;
+        column-count: 2;
+        text-align: justify;
+        string-set: subhead none;
+        font-size: 10pt;
+        font-family: "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush"; }
+        body #main .book .chapters .verses .sh {
+          display: block;
+          page-break-after: avoid;
+          bookmark-level: 4;
+          font-family: "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+          font-weight: bold;
+          font-size: 75%;
+          text-align: left;
+          color: #996300;
+          margin-top: 0.25em;
+          string-set: subhead content(); }
+        body #main .book .chapters .verses .verse {
+          counter-increment: theverse;
+          hyphens: auto;
+          page-break-inside: avoid;
+          display: inline; }
+          body #main .book .chapters .verses .verse .heb {
+            font-family: "Ezra SIL";
+            color: maroon; }
+          body #main .book .chapters .verses .verse .mozzie:after {
+            content: "☪";
+            color: #404040;
+            font-size: 60%;
+            vertical-align: bottom; }
+          body #main .book .chapters .verses .verse .pause {
+            content: "♫♪";
+            font-family: "Liberation Serif", "Quattrocento Sans", "Webdings", "Wingdings";
+            color: maroon;
+            padding-left: 0.5em;
+            padding-right: 0.5em;
+            font-style: italic; }
+          body #main .book .chapters .verses .verse.poetry {
+            hyphens: none;
+            display: block;
+            text-align: left; }
+            body #main .book .chapters .verses .verse.poetry.odd {
+              text-indent: 1.5em; }
+            body #main .book .chapters .verses .verse.poetry.even {
+              text-indent: -0.75em; }
+            body #main .book .chapters .verses .verse.poetry .poline {
+              display: block; }
+              body #main .book .chapters .verses .verse.poetry .poline.even {
+                display: block; }
+              body #main .book .chapters .verses .verse.poetry .poline.odd {
+                display: block; }
+          body #main .book .chapters .verses .verse .vmark {
+            content: counter(theverse);
+            font-family: "Alegreya Sans", "Roboto Slab", "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+            font-size: 50%;
+            vertical-align: middle;
+            color: maroon;
+            font-style: italic;
+            font-weight: bold; }
+          body #main .book .chapters .verses .verse.title {
+            text-align: center;
+            display: block; }
+          body #main .book .chapters .verses .verse.primus, body #main .book .chapters .verses .verse.parabeg {
+            text-indent: 1em;
+            display: block; }
+          body #main .book .chapters .verses .verse.masorah, body #main .book .chapters .verses .verse.selah {
+            font-weight: 900; }
+          body #main .book .chapters .verses .verse .handofgod {
+            content: "☞";
+            font-family: "Liberation Serif", "Quattrocento Sans", "Webdings", "Wingdings";
+            padding: 0px;
+            margin: 0px;
+            padding-left: 0.5em;
+            padding-right: 0.125em;
+            font-size: 120%;
+            color: maroon;
+            font-style: italic; }
+          body #main .book .chapters .verses .verse .calvary {
+            content: "✝";
+            font-family: "Helvetica", "Alex Brush";
+            font-size: 120%;
+            color: maroon; }
+          body #main .book .chapters .verses .verse.omitted, body #main .book .chapters .verses .verse.missing {
+            font-style: italic; }
+          body #main .book .chapters .verses .verse.omitted {
+            font-size: 60%; }
+          body #main .book .chapters .verses .verse .makemesmallcaps {
+            text-transform: capitalize;
+            font-variant: small-caps;
+            hyphens: none; }
+          body #main .book .chapters .verses .verse .makemetinycaps {
+            text-transform: lowercase;
+            font-variant: small-caps;
+            hyphens: none; }
+
+@page {
+  font-family: "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+  color: #996300;
+  margin: 20mm;
+  margin-top: 15mm;
+  margin-bottom: 15mm;
+  size: A4;
+  @bottom-center {
+    content: counter(page,lower-roman);
+    font-size: 75%;
+    font-family: "Alegreya SC", "Quattrocento Sans"; }
+
+  @top-center {
+    content: string(runhead) " • " string(bighead);
+    font-family: "Alegreya SC", "Quattrocento Sans";
+    font-size: 75%; } }
+
+@page :left {
+  margin-right: 25mm;
+  margin-left: 15mm; }
+
+@page :right {
+  margin-left: 25mm;
+  margin-right: 15mm; }
+
+@page biblepage {
+  @bottom-center {
+    content: counter(page);
+    prince-pdf-page-label: counter(page);
+    vertical-align: top;
+    font-family: "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush"; }
+
+  @top-center {
+    content: string(subhead, start);
+    color: maroon;
+    font-family: "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", "Cinzel Decorative", "Trajan Pro Regular", "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+    font-weight: bold; }
+
+  @top-left {
+    font-size: 75%;
+    font-variant: small-caps;
+    vertical-align: bottom;
+    content: prince-script(leading, string(moname, start), string(curchap, start), string(curverse, first), string(curchap, start)); }
+
+  @top-right {
+    font-size: 75%;
+    font-variant: small-caps;
+    vertical-align: bottom;
+    content: prince-script(tailing, string(moname, first), string(curchap, last), string(curverse, last), string(curchap, start)); } }
+
+@page frontpage {
+  @bottom-center {
+    content: none; }
+
+  @top-center {
+    content: none; } }
+
+@page tocpage {
+  @bottom-center {
+    content: none; }
+
+  @top-center {
+    content: none; } }
+
+@page coverpage {
+  background-color: maroon;
+  background: center no-repeat url("ro1.jpg");
+  background-image-resolution: 280dpi;
+  @bottom-center {
+    content: none; } }
+
+@prince-pdf {
+  prince-pdf-page-layout: single-page; }

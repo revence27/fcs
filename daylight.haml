@@ -1,0 +1,21 @@
+.entries
+  - @dates.each do |date|
+    %table
+      %tr.date
+        %td{rowspan: 3}
+          =  date
+      - got = @tout[date]
+      - morn  = got['morn']
+      - even  = got['even']
+      %tr.labels
+        %td.morn= morn[:heading]
+        %td.even= even[:heading]
+      %tr.passages
+        %td.morning
+          %ul
+            - morn[:verses].each do |vr|
+              %li=  vr
+        %td.evening
+          %ul
+            - even[:verses].each do |vr|
+              %li=  vr

@@ -1,0 +1,57 @@
+%table{width: '100%'}
+  %thead
+    %tr
+      %th.tochead{colspan: 2}
+        Table of Contents
+  %tbody.toctable
+    %tr
+      %td.tocmarker
+        %a.rom.tocist{href: '#preface'}
+      %td.tocelem
+        %a{href: '#preface'}
+          Preface
+    %tr
+      %td.tocmarker
+        %a.rom.tocist{href: '#creeds'}
+      %td.tocelem
+        %a{href: '#creeds'}
+          Creeds
+    %tr
+      %td.head{colspan: '2'}
+        Books of the Bible
+.splat
+  %table{width: '100%'}
+    %tbody.toctable
+      - @robj.first.books.each_with_index do |book, bix|
+        %tr
+          - hrf = %[#bk#{bix + 1}]
+          %td.tocmarker
+            %a.tocist{href: hrf}
+          %td.tocelem
+            %a{href: hrf}
+              = book.name
+%table{width: '100%'}
+  %tbody.toctable
+    %tr
+      %td.head{colspan: '2'}
+        Index
+    %tr
+      %td.tocmarker
+        %a.tocist.rom{href: '#devotional'}
+      %td
+        %a.tocelem{href: '#devotional'}  Devotional
+    %tr
+      %td.tocmarker
+        %a.tocist.rom{href: '#confessionoffaith'}
+      %td
+        %a.tocelem{href: '#confessionoffaith'} Confession of Faith
+    %tr
+      %td.tocmarker
+        %a.tocist.rom{href: '#catechism'}
+      %td
+        %a.tocelem{href: '#catechism'} The Catechism
+    %tr
+      %td.tocmarker
+        %a.tocist.rom{href: '#canons'}
+      %td
+        %a.tocelem{href: '#canons'} The Canons of Dordt

@@ -1,0 +1,7 @@
+- @dates.each do |date|
+  .entry
+    .date=  date
+    .readings
+      - hsh = @tout[date]
+      .ot=  hsh[:ot]
+      .nt=  hsh[:nt]

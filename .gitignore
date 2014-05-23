@@ -1,0 +1,9 @@
+*.xml
+*.svg
+*.pdf
+*.jpg
+*.png
+data/
+images/
+.sass-cache
+.*.swp

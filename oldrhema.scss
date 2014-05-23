@@ -1,0 +1,250 @@
+$swooshone: "Alegreya SC", "AquilineTwo";
+$swooshtwo: "Caudex";
+$monapfont: "Alegreya", serif;
+$headfont: $swooshone, $monapfont, serif;
+$diapfont: "Caudex", "Alegreya Sans", $monapfont, sans-serif;
+$interfacefont: "Skia", sans-serif;
+$displayfont: $swooshtwo, $diapfont;
+$geomfont: "Bentham";
+$grlarge:  61.803397052778415%;
+$grsmall:  100.0 - $grlarge;
+$columns: 2;
+
+$colour0: rgb(0, 0, 0);
+$colour1: rgb(0, 0, 0);
+$colour2: rgb(0, 0, 0);
+$colour3: rgb(0, 0, 0);
+
+//  TODO: Get a good font for the Greek.
+
+body
+{
+  font-size: 7pt;
+  font: $interfacefont;
+  color: $colour0;
+  column-count: $columns;
+
+  blockquote
+  {
+    column-count: $columns + 1;
+  }
+
+  table, tbody, thead, tfoot
+  {
+    font: inherit;
+    margin: 0px;
+    width: inherit;
+    border: 0px;
+  }
+
+  .toced
+  {
+    content: "Item in TOC";
+  }
+
+  .pageone
+  {
+    counter-reset: page;
+  }
+
+  .watermark
+  {
+    color: gray;
+    content: "This page has been intentionally left blank.";
+    font-family: $swooshone;
+    font-size: 15pt;
+    font-style: italic;
+  }
+
+  .monapla
+  {
+    font-family: $monapfont;
+
+    .capper
+    {
+      text-transform: capitalize;
+      font-family: $headfont;
+    }
+  }
+
+  .diapla
+  {
+    font-family: $diapfont;
+    font-size: 83%;
+    //  font-weight: 700;
+  }
+
+  .chapla
+  {
+    font-weight: bold;
+    string-set: curchap content();
+  }
+
+  .gapla
+  {
+    string-set: curverse content();
+  }
+
+  .chapla,
+  .gapla
+  {
+    //  font-weight: bold;
+    font-family: $geomfont;
+    font-size: $grlarge;
+    color: lighten(#000, $grsmall);
+    color: $colour1;
+  }
+
+  .apla
+  {
+    line-height: 1em;
+    page-break-inside: avoid;
+  }
+
+  .paragraphed
+  {
+    text-indent: 1em;
+  }
+
+  .monoprimus
+  {
+    &:first-letter
+    {
+       font-family: $swooshone;
+       font-size: 100% + $grlarge;
+    }
+  }
+
+  .diprimus
+  {
+    &:first-letter
+    {
+       font-family: $swooshtwo;
+       font-size: 100% + $grlarge;
+    }
+  }
+
+  .sectioneer
+  {
+    page-break-after: avoid;
+    margin-top: 1.5em;
+    font-family: $geomfont;
+    width: 100%;
+    font-size: 100.0 + $grlarge;
+
+    .aphead
+    {
+      position: running(capita);
+    }
+
+    .monaphead
+    {
+      font-family: $headfont;
+    }
+
+    .diaphead
+    {
+      font-family: $displayfont;
+      text-align: right;
+    }
+  }
+
+  .booker
+  {
+    page-break-before: always;
+    font-family: $displayfont;
+    font-size: 168.2%;
+    width: 100%;
+    text-align: center;
+
+    .bname
+    {
+      font-family: $headfont;
+      string-set: moname content();
+      text-align: left;
+    }
+
+    .metadata
+    {
+      font-family: $displayfont;
+      string-set: diname content();
+      text-align: right;
+    }
+  }
+}
+
+@page:left
+{
+  @bottom-left-corner
+  {
+    content: counter(page);
+    font-weight: bold;
+    font-family: $geomfont;
+    font-size: 75%;
+    font-style: italic;
+  }
+
+  @top-center
+  {
+    color: $colour2;
+    font-weight: bold;
+    font-family: $geomfont;
+    content: prince-script(pieceName, string(moname, start), string(moname, first), string(curchap, start), string(curchap, first), string(curverse, first), string(moname, last), string(curchap, last), string(curverse, last));
+  }
+}
+
+@page:right
+{
+  @bottom-right-corner
+  {
+    content: counter(page);
+    font-weight: bold;
+    font-style: italic;
+    font-family: $geomfont;
+    font-size: 75%;
+  }
+
+  @top-center
+  {
+    color: $colour2;
+    font-weight: bold;
+    font-family: $geomfont;
+    content: prince-script(pieceName, string(diname, start), string(diname, first), string(curchap, start), string(curchap, first), string(curverse, first), string(diname, last), string(curchap, last), string(curverse, last));
+  }
+}
+
+@page
+{
+  size: a5 landscape;
+  counter-reset: footnote;
+
+  @footnotes
+  {
+    font-family: $displayfont;
+    font-size: 83%;
+    //  background: lighten(#000, $grlarge);
+    padding: 0.75em;
+    border-radius: 1em 1em 1em 1em;
+  }
+}
+
+.foo
+{
+  float: footnote;
+  font-family: $displayfont;
+  font-size: $grlarge;
+    border-radius: 1em 1em 1em 1em;
+
+  &::footnote-call
+  {
+    vertical-align: super;
+    font-style: italic;
+    color: $colour3;
+  }
+
+  &::footnote-marker
+  {
+    color: $colour3;
+    font-style: italic;
+  }
+}

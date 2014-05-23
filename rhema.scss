@@ -1,0 +1,1100 @@
+$tertf0: "Trajan Pro Regular";
+$tertf1: "TrajanusBricks", $tertf0;
+$tertf2: "Caudex";
+$tertf3: "Liberation Mono";
+
+$covfont1: $tertf0, "GeosansLight", "Emblema One", "Londrina Outline", "Spin Cycle 3D OT", "Sportrop", "Spin Cycle 3D OT", "Santana-Black", "Prosto One", "Archistico", "Alex Brush";
+$chapfont: "Cinzel Decorative", $covfont1;
+$crossfont: "Helvetica", "Alex Brush";
+$selahfont: "Liberation Serif", "Quattrocento Sans", "Webdings", "Wingdings";  //  Should support the music glyphs I use. This one doesn’t.
+$handfont: $selahfont;
+$hebfont: "Ezra SIL";
+
+$font1: $chapfont;
+$font2: "Varela Round", "Liberation Sans", "Alegreya SC", "Sedgwick Co", "Arimo", "Goudy Bookletter 1911", $font1;
+$font3: "Goudy Bookletter 1911", "Liberation Sans", "Simonetta", "OFL Sorts Mill Goudy", "Tinos", "Timeless", "Liberation Serif", "Alegreya", $font2;
+$font3sc: "Alegreya SC", $font3;
+$font4:  "Alegreya Sans", "Roboto Slab", $font3;
+
+$ef1: "Alegreya", "Quattrocento Roman";
+$ef2: "Alegreya SC", "Quattrocento Sans";
+
+$highcol: maroon;
+$maincol: black;
+$bgcolor: white;
+$altcol: darken(orange, 20%);
+$covcol: $altcol;
+
+$margin_size: 20mm;  //  10mm;
+$paper_size: A4;// US-Tabloid;
+$columns: 2;   //  3;
+
+body
+{
+  font-family: $font1;
+  font-size: 13pt;
+  font-variant-settings: "diag", "dlig";
+  //  background: $bgcolor;
+  hyphenate-after: 3;
+
+  .cov
+  {
+    font-variant: normal;
+    font-size: 40pt;
+    font-family: $covfont1;
+    page: coverpage;
+    vertical-align: bottom;
+    text-align: center;
+    color: $covcol;
+    margin-top: 3em;
+
+    .cross
+    {
+      font-size: 500%;
+      font-weight: 900;
+      color: $covcol;
+      font-family: $crossfont;
+    }
+  }
+
+  h1
+  {
+    .lic
+    {
+      font-family: $font2;
+      text-align: right;
+      margin-right: 25%;
+      font-variant: normal;
+      font-size: 10pt;
+      color: $maincol;
+    }
+
+    .decl
+    {
+      font-family: $font3sc;
+      font-variant: small-caps;
+      color: $highcol;
+      border-bottom: solid 1px $highcol;
+      margin-top: 2em;
+      font-size: 50%;
+      font-weight: normal;
+      padding-left: 5em;
+      padding-right: 5em;
+    }
+  }
+
+  .brk
+  {
+    page-break-before: always;
+  }
+
+  .publabel
+  {
+    font-size: 20pt;
+    text-align: right;
+    margin-top: 0.5em;
+
+    .prnom
+    {
+      font-family: $tertf1;
+
+      &:first-letter
+      {
+        color: $highcol;
+        //  font-family: $tertf0;
+      }
+    }
+
+    .motto
+    {
+      font-family: $tertf2;
+      font-size: 50%;
+    }
+
+    .url
+    {
+      font-family: $tertf3;
+      font-size: 50%;
+    }
+
+    .dt
+    {
+      font-family: $tertf3;
+      font-weight: bold;
+      font-size: 30%;
+    }
+  }
+
+  .index
+  {
+    font-family: $ef2;
+    page-break-before: always;
+    counter-reset: page 1;
+
+    h1, h2, h3, h4, h5, h6
+    {
+      font-family: $ef1;
+    }
+
+    .mainquote
+    {
+      width: 75%;
+      margin-left: 12.5%;
+      font-family: $font3;
+      text-align: center;
+      font-size: 75%;
+      font-style: italic;
+
+      p
+      {
+        margin: 0px;
+        margin-bottom: 0.5em;
+      }
+
+      .where
+      {
+        font-family: $font4;
+        text-align: right;
+        color: $highcol;
+      }
+    }
+
+    .entries
+    {
+      font-size: 50%;
+      column-count: 2;
+
+      table
+      {
+        width: 100%;
+        border-collapse: collapse;
+        page-break-inside: avoid;
+        //  border: 1px solid $highcol;
+        margin-top: 0.75em;
+
+        tr
+        {
+          //  border: 1px solid $highcol;
+        }
+
+        td
+        {
+          vertical-align: top;
+          text-align: center;
+          border: none;
+        }
+
+        .date
+        {
+          margin-top: 1em;
+          width: 20%;
+
+          td
+          {
+            font-weight: bold;
+            color: $highcol;
+            text-align: right;
+            font-size: 120%;
+          }
+        }
+
+        .labels
+        {
+          //  font-family: $ef1;
+          font-family: $ef2;
+          font-weight: bold;
+          //  font-variant: small-caps;
+          border-bottom: solid 1px $highcol;
+          font-size: 110%;
+
+          .morn
+          {
+            &:before
+            {
+              content: "☼";
+              color: $highcol;
+              padding-right: 0.75em;
+            }
+          }
+
+          .even
+          {
+            &:after
+            {
+              content: "✦";
+              color: $highcol;
+              padding-left: 0.75em;
+            }
+          }
+        }
+
+        .passages
+        {
+          .morning, .evening
+          {
+            width: 40%;
+            padding: 0px;
+            padding-bottom: 0.5em;
+            //  white-space: pre;
+
+            ul
+            {
+              counter-reset: pcount;
+              list-style: none;
+              margin: 0px;
+
+              li
+              {
+                counter-increment: pcount;
+                margin: 0px;
+                display: inline;
+
+                &:before
+                {
+                  content: counter(pcount, lower-alpha) ". ";
+                  color: $highcol;
+                  font-style: italic;
+                  font-weight: bold;
+                  font-family: $font4;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .ruled
+  {
+    border: solid 1px $altcol;
+    margin-top: 1em;
+
+    .line
+    {
+      height: 6mm;
+      border: none;
+      width: 100%;
+      border-bottom: dashed 1px lighten($altcol, 50%);
+    }
+  }
+
+  .toc
+  {
+    page-break-before: always;
+    page: tocpage;
+
+    .tochead
+    {
+      font-size: 200%;
+      color: $highcol;
+      border-bottom: solid $altcol 1px;
+    }
+
+    .splat
+    {
+      column-count: 2;
+    }
+
+    .toctable
+    {
+      counter-reset: te;
+      width: 100%;
+
+      a
+      {
+        text-decoration: none;
+        color: inherit;
+
+        &:hover
+        {
+          color: $highcol;
+        }
+      }
+
+      .head
+      {
+        color: $altcol;
+        font-size: 120%;
+        font-weight: bold;
+        margin-top: 0.25em;
+        margin-bottom: 0.125em;
+      }
+
+      .tocist
+      {
+        //  content: counter(te);
+        font-family: $ef2;
+        text-align: left;
+        font-weight: bold;
+        font-style: italic;
+        //  width: 10em;
+        padding-right: 1em;
+        content: target-counter(attr(href), page);
+
+        &.rom
+        {
+          content: target-counter(attr(href), page, lower-roman);
+        }
+      }
+
+      .tocmarker
+      {
+        width: 4em;
+        font-family: $ef2;
+        text-align: center;
+      }
+
+      .tocelem
+      {
+        font-size: 80%;
+        counter-increment: te;
+        display: block;
+      }
+    }
+  }
+
+  .preface
+  {
+    font-family: $ef1;
+    page-break-before: always;
+    page-break-after: always;
+
+    i
+    {
+      color: inherit;
+      font: inherit;
+      font-style: italic;
+    }
+
+    sup
+    {
+      font-size: 50%;
+    }
+
+    h1, h2, h3, h4, h5, h6
+    {
+      font-family: $ef2;
+      margin: 0px;
+      margin-top: 1.2em;
+    }
+
+    h2
+    {
+      string-set: bighead content();
+    }
+
+    h3
+    {
+      &.labeled
+      {
+        string-set: runhead content();
+      }
+
+      &.cleared
+      {
+        page-break-before: always;
+      }
+    }
+
+    .mainquote
+    {
+      width: 75%;
+      margin-left: 12.5%;
+      font-family: $font3;
+      text-align: center;
+      font-size: 75%;
+      font-style: italic;
+
+      p
+      {
+        margin: 0px;
+        margin-bottom: 0.5em;
+      }
+
+      .where
+      {
+        font-family: $font4;
+        text-align: right;
+        color: $highcol;
+      }
+    }
+
+    .conc
+    {
+      column-count: 3;
+
+      p
+      {
+        text-align: justify;
+        hyphens: auto;
+      }
+    }
+
+    .livre
+    {
+      font-size: 60%;
+
+      .bk
+      {
+        h1, h2, h3, h4, h5, h6
+        {
+          
+        }
+
+        .info
+        {
+          column-count: $columns;
+          counter-reset: 1;
+
+          h1, h2, h3, h4, h5, h6
+          {
+            width: 50%;
+            float: left;
+            margin: 0px;
+            padding: 0px;
+            padding-right: 0.25em;
+          }
+
+          .counted
+          {
+            counter-increment: artctr;
+            
+            &:before
+            {
+              content: counter(artctr);
+              font-family: $font4;
+              padding-right: 0.25em;
+              padding-left: 0.25em;
+              margin-right: 0.25em;
+              float: left;
+              color: $bgcolor;
+              background: $highcol;
+            }
+          }
+
+          .rej
+          {
+            &:before
+            {
+              content: "—";
+              font-family: $font4;
+              padding-right: 0.25em;
+              padding-left: 0.25em;
+              margin-right: 0.25em;
+              float: left;
+              color: $highcol;
+            }
+          }
+
+          .cart
+          {
+            width: 100%;
+            float: none;
+          }
+
+          .art
+          {
+            counter-increment: artctr;
+            margin-bottom: 1em;
+          }
+
+          p
+          {
+            hyphens: auto;
+            text-align: justify;
+            margin: 0px;
+            margin-bottom: 0.3333em;
+
+            &.listed
+            {
+              text-align: center;
+            }
+          }
+
+          .verses
+          {
+            list-style: none;
+            //  color: $highcol;
+            color: $altcol;
+            text-align: center;
+            font-family: $font4;
+            font-size: 75%;
+            margin: 0px;
+            margin-bottom: 1em;
+            counter-reset: refc;
+
+            li
+            {
+              display: inline;
+              margin: 0px;
+              text-indent: 0px;
+              font-weight: bold;
+
+              &:before
+              {
+                content: counter(refc, lower-alpha) ".";
+                counter-increment: refc;
+                //  color: $maincol;
+                color: $highcol;
+                //  background: $maincol;
+                margin-left: 0.25em;
+                margin-right: 0.125em;
+                padding-right: 0em;
+                padding-left: 0.25em;
+                font-weight: normal;
+                font-style: italic;
+              }
+
+              &:first
+              {
+                &:before
+                {
+                  content: none;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .crtd
+    {
+      width: 50%;
+      vertical-align: top;
+    }
+
+    .articles
+    {
+      //  column-count: 2;
+      margin-left: 10%;
+      width: 80%;
+
+      .article
+      {
+        margin-top: 1em;
+        //  page-break-inside: avoid;
+
+        h1, h2, h3, h4, h5, h6
+        {
+          //  content: "•" content() "•";
+          margin: 0px;
+          width: 25%;
+          float: left;
+          text-align: right;
+          padding-right: 0.25em;
+        }
+
+        .copy
+        {
+          font-size: 75%;
+
+          p
+          {
+            text-indent: 1em;
+            margin: 0px;
+            margin-top: 0.25em;
+            page-break-inside: avoid;
+          }
+
+          .edt
+          {
+            //  font-size: 75%;
+            font-size: 95%;
+            font-family: $font3sc;
+            //  font-variant: small-caps;
+            text-align: right;
+            width: 20%;
+
+            sup
+            {
+              font-family: $font3;
+            }
+          }
+        }
+
+        .lectionary
+        {
+          font-family: $ef2;
+          font-size: 50%;
+          border: solid 1px $highcol;
+          column-count: 6;
+          padding: 0.5em;
+
+          .entry
+          {
+            margin: 0px;
+            margin-top: 0.5em;
+            page-break-inside: avoid;
+            text-align: center;
+
+            .date
+            {
+              font-weight: bold;
+              color: $highcol;
+            }
+
+            .readings
+            {
+              .nt, .ot
+              {
+              }
+
+              .ot
+              {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  i
+  {
+    //  color: lighten($maincol, 25%);
+    //  font-weight: 300;
+  }
+
+  h1, h2, h3, h4, h5, h6
+  {
+    width: 100%;
+    text-align: center;
+    font-family: $font1;
+    //  font-variant: small-caps;
+    //  font-size: 40pt;
+    color: $highcol;
+  }
+
+  #main
+  {
+    counter-reset: page;
+    background: $bgcolor;
+
+    h1
+    {
+      page: frontpage;
+    }
+
+    .content
+    {
+      counter-reset: page 1;
+      //  counter-increment: pgcount;
+      page: biblepage;
+    }
+
+    .book
+    {
+
+      h2
+      {
+        string-set: moname content();
+        page-break-before: always;
+      }
+
+      .bkhead
+      {
+        page: frontpage;
+        margin-bottom: 1em;
+        font-family: $ef2;
+        page-break-before: always;
+        text-align: center;
+        font-size: 250%;
+        color: $altcol;
+        border: solid 1px $highcol;
+        padding: 0.25em;
+
+        .teensy
+        {
+          display: block;
+          color: $highcol;
+          font-size: 50%;
+          //  font-weight: bold;
+        }
+      }
+
+      .chapters
+      {
+        counter-reset: chapter;
+
+        h3
+        {
+          string-set: curchap content();
+          content: " —" content() "— ";
+          font-family: $chapfont;
+          //  bookmark-level: 3;
+          //  bookmark-label: " —" content();
+          margin: 0px;
+          margin-top: 1.2em;
+        }
+        
+        .illu
+        {
+          text-align: center;
+          page-break-inside: avoid;
+          //  font-family: $chapfont;
+          font-family: $ef2;
+          text-align: center;
+          display: block;
+          line-height: 0.5em;
+          margin: 0px;
+          margin-top: 0.25em;
+          margin-bottom: 0.5em;
+          margin-left: 12.5%;
+          width: 75%;
+          padding: 0.25%;
+          border: 1px solid $altcol;
+          background: $maincol;
+          color: $bgcolor;
+
+          img
+          {
+            display: block;
+            width: 99%;
+            margin: 0.25%;
+            border: $highcol 1px solid;
+            //  margin-left: 12.5%;
+            string-set: imgtit attr(alt);
+          }
+
+          &:after
+          {
+            content: string(imgtit);
+            width: 50%;
+            font-size: 60%;
+          }
+        }
+
+        .pstitle
+        {
+          font-family: $font3sc;
+          //  font-variant: small-caps;
+          color: $highcol;
+          text-align: center;
+          font-size: 75%;
+          page-break-after: avoid;
+          page-break-before: avoid;
+        }
+
+        .verses
+        {
+          counter-reset: theverse;
+          counter-increment: chapter;
+          column-count: $columns;
+          text-align: justify;
+          string-set: subhead none;
+          font-size: 10pt;
+          font-family: $font3;
+
+          .sh
+          {
+            display: block;
+            page-break-after: avoid;
+            bookmark-level: 4;
+            font-family: $font2;
+            font-weight: bold;
+            font-size: 75%;
+            text-align: left;
+            color: $altcol;
+            margin-top: 0.25em;
+            string-set: subhead content();
+          }
+
+          .verse
+          {
+            counter-increment: theverse;
+            hyphens: auto;
+            //  line-stacking-strategy: block-line-height;
+            //  text-align: right;
+            page-break-inside: avoid;
+            display: inline;
+
+            .heb
+            {
+              font-family: $hebfont;
+              color: $highcol;
+            }
+
+            .mozzie
+            {
+              &:after
+              {
+                content: "☪";
+                color: lighten($maincol, 25%);
+                font-size: 60%;
+                vertical-align: bottom;
+              }
+            }
+            
+            .pause
+            {
+              content: "♫♪";
+              font-family: $selahfont;
+              color: $highcol;
+              padding-left: 0.5em;
+              padding-right: 0.5em;
+              font-style: italic;
+            }
+
+            &.poetry
+            {
+              hyphens: none;
+              display: block;
+              //  line-height: 1em;
+              text-align: left;
+
+              &.odd
+              {
+                //  text-align: right;
+                text-indent: 1.5em;
+              }
+
+              &.even
+              {
+                //  text-align: left;
+                text-indent: -0.75em;
+              }
+
+              .poline
+              {
+                display: block;
+
+                &.even
+                {
+                  display: block;
+                }
+
+                &.odd
+                {
+                  display: block;
+                }
+              }
+            }
+
+            //  &:before
+            .vmark
+            {
+              content: counter(theverse);
+              font-family: $font4;
+              font-size: 50%;
+              vertical-align: middle;
+              color: $highcol;
+              font-style: italic;
+              font-weight: bold;
+            }
+
+            &.title
+            {
+              //  text-decoration: underline;
+              text-align: center;
+              display: block;
+            }
+
+            &.parabeg
+            {
+              //  text-indent: 1em;
+              //  display: block;
+            }
+
+            &.primus
+            {
+              //  text-indent: 1em;
+              //  display: block;
+            }
+
+            &.primus, &.parabeg
+            {
+              text-indent: 1em;
+              display: block;
+            }
+
+            &.masorah, &.selah
+            {
+              //  font-family: $font3sc;
+              //  font-variant: small-caps;
+              font-weight: 900;
+            }
+
+            .handofgod
+            {
+              content: "☞";
+              font-family: $handfont;
+              padding: 0px;
+              margin: 0px;
+              padding-left: 0.5em;
+              padding-right: 0.125em;
+              font-size: 120%;
+              color: $highcol;
+              font-style: italic;
+            }
+
+            .calvary
+            {
+                //  font-family: $font3sc;
+                //  font-variant: small-caps;
+                content: "✝";
+                font-family: $crossfont;
+                font-size: 120%;
+                color: $highcol;
+            }
+
+            &.omitted, &.missing
+            {
+              //  font-size: 75%;
+              font-style: italic;
+              //  color: lighten($maincol, 25%);
+            }
+
+            &.omitted
+            {
+              font-size: 60%;
+              //  color: lighten($maincol, 25%);
+            }
+
+            &.missing
+            {
+            }
+
+            .makemesmallcaps
+            {
+              text-transform: capitalize;
+              font-variant: small-caps;
+              hyphens: none;
+            }
+
+            .makemetinycaps
+            {
+              text-transform: lowercase;
+              font-variant: small-caps;
+              hyphens: none;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@page
+{
+  font-family: $font2;
+  color: $altcol;
+  //  font-weight: bold;
+  margin: $margin_size;
+  margin-top: $margin_size * 0.75;
+  margin-bottom: $margin_size * 0.75;
+  size: $paper_size;
+
+  @bottom-center
+  {
+    content: counter(page, lower-roman);
+    font-size: 75%;
+    font-family: $ef2;
+  }
+
+  @top-center
+  {
+    content: string(runhead) " • " string(bighead);
+    font-family: $ef2;
+    font-size: 75%;
+  }
+}
+
+@page:left
+{
+  margin-right: $margin_size + ($margin_size / 4);
+  margin-left: $margin_size - ($margin_size / 4);
+}
+
+@page:right
+{
+  margin-left: $margin_size + ($margin_size / 4);
+  margin-right: $margin_size - ($margin_size / 4);
+}
+
+@page biblepage
+{
+  @bottom-center
+  {
+    //  content: prince-script(displayPage, counter(page));
+    content: counter(page);
+    prince-pdf-page-label: counter(page);
+    //  letter-spacing: 0.25em;
+    vertical-align: top;
+    font-family: $font2;
+  }
+
+  @top-center
+  {
+    content: string(subhead, start);
+    color: $highcol;
+    font-family: $font2;
+    font-weight: bold;
+  }
+
+  @top-left
+  {
+    font-size: 75%;
+    font-variant: small-caps;
+    vertical-align: bottom;
+    content: prince-script(leading, string(moname, start),
+             string(curchap, start), string(curverse, first),
+             string(curchap, start));
+  }
+
+  @top-right
+  {
+    font-size: 75%;
+    font-variant: small-caps;
+    vertical-align: bottom;
+    content: prince-script(tailing, string(moname, first),
+            string(curchap, last), string(curverse, last),
+            string(curchap, start));
+  }
+}
+
+@page frontpage
+{
+  @bottom-center
+  {
+    content: none;
+  }
+
+  @top-center
+  {
+    content: none;
+  }
+}
+
+@page tocpage
+{
+  @bottom-center
+  {
+    content: none;
+  }
+
+  @top-center
+  {
+    content: none;
+  }
+}
+
+@page coverpage
+{
+  background-color: $highcol;
+  background: center no-repeat url('ro1.jpg');
+  background-image-resolution: 280dpi;
+  //  border: solid 1px $covcol;
+
+  @bottom-center
+  {
+    content: none;
+  }
+}
+
+@prince-pdf
+{
+  prince-pdf-page-layout: single-page;
+}
