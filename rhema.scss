@@ -55,6 +55,20 @@ body
       color: $covcol;
       font-family: $crossfont;
     }
+
+    .subtitle
+    {
+      margin-top: 6em;
+      font-weight: 300;
+      font-family: $font3sc, $chapfont, $tertf0;
+      font-size: 13pt;
+      width: 80%;
+      margin-left: 10%;
+      border: solid 1px $covcol;
+      color: $highcol;
+      padding: 0.5em;
+      background: rgba(255, 255, 255, 0.5);
+    }
   }
 
   h1
@@ -687,7 +701,6 @@ body
 
     .book
     {
-
       h2
       {
         string-set: moname content();
@@ -806,9 +819,7 @@ body
           {
             counter-increment: theverse;
             hyphens: auto;
-            //  line-stacking-strategy: block-line-height;
-            //  text-align: right;
-            page-break-inside: avoid;
+            //  page-break-inside: avoid;
             display: inline;
 
             .heb
@@ -907,7 +918,7 @@ body
             &.primus, &.parabeg
             {
               text-indent: 1em;
-              display: block;
+              display: inline-block;
             }
 
             &.masorah, &.selah
@@ -969,6 +980,41 @@ body
               text-transform: lowercase;
               font-variant: small-caps;
               hyphens: none;
+            }
+          }
+        }
+      }
+
+      &.stylised
+      {
+        page: isolatedstyle;
+        h1, h2, h3, h4, h5, h6
+        {
+          font-family: "Ubuntu";
+
+          .chapters
+          {
+            background: rgba(255, 255, 255, 0.5);
+
+            .chapter
+            {
+              h3
+              {
+                content: content();
+              }
+
+              .verses
+              {
+                font-family: "Ubuntu";
+                font-weight: 300;
+                font-size: 20pt;
+                column-count: 1;
+
+                .verse
+                {
+
+                }
+              }
             }
           }
         }
@@ -1097,4 +1143,14 @@ body
 @prince-pdf
 {
   prince-pdf-page-layout: single-page;
+}
+
+@page isolatedstyle
+{
+  size: A4 landscape;
+  background: url('images/duck.jpg') fixed center no-repeat;
+  background-image-width: 100%;
+  font-family: "Alegreya";
+  color: white;
+  text-shadow: 0.125em 0.125em 0.125em $maincol;
 }

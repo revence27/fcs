@@ -26,7 +26,7 @@ end
 class Bible
   attr_reader :books, :name
   def initialize name
-    @name = name
+    @name     = name
   end
 
   def to_hash

@@ -23,7 +23,7 @@ class String
   end
 
   def treat_verse
-    self.strip.no_verse_corrections.gsub(/•([^•]+)•/, '<span class="mozzie">\1</span>').gsub(/{([^}])+}/, '<span class="heb">\1</span>').gsub(/\s*-\s+/, '—').gsub("'", '’').gsub(' Pause.', ' <span class="pause">Pause.</span>').gsub(/\[([^\]]+)\]/, '<i>\1</i>').small_cap_caps
+    self.strip.no_verse_corrections.gsub(/•([^•]+)•/, '<span class="mozzie">\1</span>').gsub(/{([^}])+}/, '<span class="heb">\1</span>').gsub(/\s*-\s+/, '—').gsub(/^Pause\./, '<span class="pause">Pause.</span>').gsub("'", '’').gsub(/\[([^\]]+)\]/, '<i>\1</i>').small_cap_caps
   end
 
   def make_poem_pieces *pts
@@ -53,11 +53,12 @@ class String
 end
 
 class Rhema
-  attr_reader :name, :first, :last, :licence, :signature
-  def initialize name, lic, images, cues, sig
+  attr_reader :name, :first, :last, :licence, :signature, :subtitle
+  def initialize name, lic, images, cues, sbt, sig
     @name         = name
     @licence      = lic
     @signature    = sig
+    @subtitle     = sbt
     @cues         = cues
     @first, @last = Bible.new(name), Bible.new(name)
     @images       = images
@@ -84,6 +85,14 @@ class Rhema
 
   def poetry_cues bix, cix = nil, vix = nil
     pick_cues(@pcues, bix, cix, vix)
+  end
+
+  def book_styling str, bix, book
+    'stylised'
+  end
+
+  def chapter_styling str, bix, book, cix, chap = nil
+    'stylised'
   end
 
   def chapter_illustration str, bix, book, cix, chap = nil
@@ -316,7 +325,7 @@ def main args
     File.open arg do |fich|
       doc   = Hpricot.XML(fich)
       rhema = (doc / 'rhema').first
-      robj  = Rhema.new(rhema['name'], rhema['licence'] || 'Public Domain', (rhema / 'images').first, (rhema / 'cues').first, (rhema / 'sig').first.inner_html) do |r, first, last|
+      robj  = Rhema.new(rhema['name'], rhema['licence'] || 'Public Domain', (rhema / 'images').first, (rhema / 'cues').first, (rhema / 'sub').first.inner_html, (rhema / 'sig').first.inner_html) do |r, first, last|
         File.open((rhema / 'top').first['href']) {|top| first.process! top, r}
         File.open((rhema / 'bottom').first['href']) {|bottom| last.process! bottom, r}
       end

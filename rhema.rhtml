@@ -14,46 +14,50 @@ $books      = @robj.first.books
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   </head>
   <body>
-    <div class="cov"><%= @robj.name %><div class="cross">†</div></div>
+    <div class="cov"><%= @robj.name %><div class="cross">†</div><div class="subtitle"><%= @robj.subtitle  %></div></div>
     <div id="main">
       <h1><%= @robj.name %><div class="lic"><%=  @robj.licence  %></div><div class="ruled"><%= ruled(33) %></div><div class="decl"><%= @robj.signature  %></div></h1>
       <div class="toc"><%=  toc() %></div>
       <div class="preface"><%= preface() %></div>
       <div class="content">
         <%  $books.each_with_index do |bk, ix| %>
-          <div class="book">
+          <div class="book <%= @robj.book_styling(%[], ix, bk) %>">
             <% unless bk.head.nil? then %><div class="bkhead"><%= bk.head %></div><% end %>
             <h2 id="bk<%= ix + 1 %>"><%= bk.name %></h2>
             <div class="chapters">
               <%  bk.chapters.each_with_index do |ch, cix| %>
-                <h3><%= cix + 1 %></h3>
-                <%= @robj.chapter_illustration(%[<div class="illu"><img alt=%s src=%s /></div>], ix, bk, cix, ch) %>
-                <%  if  ch[:title].to_s != '' then %>
-                  <div class="pstitle"><%= ch[:title].to_s.gsub(/\[([^\]]+)\]/, '<i>\1</i>').gsub("'", '’')  %></div>
-                <% end  %>
-                <div class="verses">
-                  <%
-                    initand = true
-                    ch[:verses].each_with_index do |vr, vix|
-                      vt      = (vr || {})[:text].to_s
-                      if vt =~ /translation omits/ then
-                        vt  = @robj.last.books[ix].chapters[cix][:verses][vix][:text].to_s   %>
-                        <span class="verse omitted"><span class="vmark"></span><%= vt  %></span>
-                      <% else
-                        begin
-                          dat = vt.treat_verse
-                          # (vt.strip =~ /^And / ? ' parabeg' : '')
-                        %>
-                        <% if vr[:sh] then %><span class="sh"><%= vr[:sh] %></span><% end %><span class="verse<%= (vr[:sh] || ((ix < 39) && (vt.no_verse_corrections.strip =~ /^(And |Every |You )/)) || ((ix >= 39) && (vt.no_verse_corrections.strip =~ /^(And |And, |Therefore|For |You |‘|Now |When )/)) ? ' parabeg' : '') %><%= (vix.zero? ? ' primus' : '') %><%= (vr[:mark] ? ' masorah' : '') %><%= (vr[:think] ? ' selah' : '') %><%= (vr[:poem] ? ' poetry' : '') %><%= (vix.odd? ? ' odd' : ' even') %>"><%= (vr[:hand] ? %[<span class="handofgod"></span>] : '')  %><%= (vr[:poem] ? vr[:pieces].map.with_index {|x, pix| %[<span class="poline #{(pix.even? ? 'even' : 'odd')}">#{pix.zero? ? '<span class="vmark"></span>' : ''}#{x[:pre]}#{x[:text].treat_verse}#{x[:post]}#{(pix == (vr[:pieces].length - 1) && vr[:mark] ? '<span class="calvary"></span>' : '')}</span>]}.join('') : %[<span class="vmark"></span>#{dat}#{(vr[:mark] ? '<span class="calvary"></span>' : '')}]) %></span>
-                        <% rescue Exception => e
-                          # $stderr.puts('%s %d:%d [%s]' % [bk.name, cix + 1, vix + 1, vr.inspect])
-                        %>
-                          <span class="verse missing"><span class="vmark"></span>…</span>
-                        <% end
-                      end
-                    end %>
+                <div class="chapter <%= @robj.chapter_styling(%[], ix, bk, cix, ch) %>">
+                  <h3><%= cix + 1 %></h3>
+                  <%= @robj.chapter_illustration(%[<div class="illu"><img alt=%s src=%s /></div>], ix, bk, cix, ch) %>
+                  <%  if  ch[:title].to_s != '' then %>
+                    <div class="pstitle"><%= ch[:title].to_s.gsub(/\[([^\]]+)\]/, '<i>\1</i>').gsub("'", '’')  %></div>
+                  <% end  %>
+                  <div class="verses">
+                    <%
+                      initand = true
+                      prevone = nil
+                      ch[:verses].each_with_index do |vr, vix|
+                        vt      = (vr || {})[:text].to_s
+                        if vt =~ /translation omits/ then
+                          vt  = @robj.last.books[ix].chapters[cix][:verses][vix][:text].to_s   %>
+                          <span class="verse omitted"><span class="vmark"></span><%= vt  %></span>
+                        <% else
+                          begin
+                            dat = vt.treat_verse
+                            # (vt.strip =~ /^And / ? ' parabeg' : '')
+                          %>
+                          <% if vr[:sh] then %><span class="sh"><%= vr[:sh] %></span><% end %><span class="verse<%= (vr[:sh] || ((ix < 39) && (vt.no_verse_corrections.strip =~ /^(And |Every |You )/)) || ((ix >= 39) && ((vt.no_verse_corrections.strip =~ /^(And |And, |Therefore|For |You |‘|“|Now |When )/) || prevone =~ /(’$)|(”$)|(—$)/)) ? ' parabeg' : '') %><%= (vix.zero? ? ' primus' : '') %><%= (vr[:mark] ? ' masorah' : '') %><%= (vr[:think] ? ' selah' : '') %><%= (vr[:poem] ? ' poetry' : '') %><%= (vix.odd? ? ' odd' : ' even') %>"><%= (vr[:hand] ? %[<span class="handofgod"></span>] : '')  %><%= (vr[:poem] ? vr[:pieces].map.with_index {|x, pix| %[<span class="poline #{(pix.even? ? 'even' : 'odd')}">#{pix.zero? ? '<span class="vmark"></span>' : ''}#{x[:pre]}#{x[:text].treat_verse}#{x[:post]}#{(pix == (vr[:pieces].length - 1) && vr[:mark] ? '<span class="calvary"></span>' : '')}</span>]}.join('') : %[<span class="vmark"></span>#{dat}#{(vr[:mark] ? '<span class="calvary"></span>' : '')}]) %></span>
+                          <% rescue Exception => e
+                            # $stderr.puts('%s %d:%d [%s]' % [bk.name, cix + 1, vix + 1, vr.inspect])
+                          %>
+                            <span class="verse missing"><span class="vmark"></span>…</span>
+                          <% end
+                        end
+                        prevone = vt.strip
+                      end %>
                   </div>
-              <%  end %>
+                <%  end %>
+              </div>
             </div>
           </div>
         <%  end %>
