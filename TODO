@@ -1,5 +1,22 @@
 Auto-paragraphing both testaments.
 Translator’s interface.
+Protest pages.
+Rails Rhema. (Worth it?)
+-----
+Rails Rhema
+1.  Translatable-Text Object
+2.  Canon (heading and statement as TTO, Bible references)
+3.  Creed (set of canons)
+4.  Illustration (path, reference, caption as TTO)
+5.  Highlights (primary, secondary, tertiary)
+6.  Formatting and poetry cues
+7.  Reference headings (as TTO)
+8.  Devotionals
+9.  Easter calculator
+10. Cover art.
+
+11. Image-aware templates?
+12. Font system?
 -----
 Luganda*-English
 Swahili**-English

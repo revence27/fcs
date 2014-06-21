@@ -61,6 +61,8 @@ body
       margin-top: 6em;
       font-weight: 300;
       font-family: $font3sc, $chapfont, $tertf0;
+      line-height: 0.85em;
+      column-count: 2;
       font-size: 13pt;
       width: 80%;
       margin-left: 10%;
@@ -68,6 +70,11 @@ body
       color: $highcol;
       padding: 0.5em;
       background: rgba(255, 255, 255, 0.5);
+
+      .dispent
+      {
+        margin-bottom: 0.5em;
+      }
     }
   }
 
@@ -985,7 +992,7 @@ body
         }
       }
 
-      &.stylised
+      &.stylised-off
       {
         page: isolatedstyle;
         h1, h2, h3, h4, h5, h6
